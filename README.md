@@ -63,3 +63,6 @@ Each model was evaluated using the following metrics:
 | **Random Forest** | High precision (100%), improved stability | Strong but slightly below Logistic Regression; good feature importance insights |
 | **XGBoost** | High precision (100%), strong AUC | Comparable to Random Forest; no significant improvement over simpler models |
 
+
+## Streamlit deployed link
+https://ml-assignment-2-ursiru6q2v9fmhmdhtldxj.streamlit.app/
