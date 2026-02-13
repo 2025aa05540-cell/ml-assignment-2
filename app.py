@@ -29,8 +29,8 @@ st.write("Upload test dataset and evaluate trained models.")
 # ---------------------------
 # Load Available Models
 # ---------------------------
-root = Path.cwd()
-model_dir = root / "saved_models"
+root = Path(__file__).parent
+model_dir = root / "model" / "saved_models"
 
 if not model_dir.exists():
     st.error("❌ saved_models folder not found.")
@@ -50,7 +50,7 @@ selected_model = st.selectbox("Select Model", model_names)
 # ---------------------------
 # Display Precomputed Metrics
 # ---------------------------
-metrics_path = root / "model_metrics.csv"
+metrics_path = root / "model" / "model_metrics.csv"
 
 if metrics_path.exists():
     metrics_df = pd.read_csv(metrics_path)
