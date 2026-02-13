@@ -54,13 +54,19 @@ def main():
     save_dir = root / "saved_models"
     save_dir.mkdir(parents=True, exist_ok=True)
 
-    data_dir = ".."/ root / "data"
+    data_dir = root / "data"
     print("Data directory:", data_dir)
     data_dir.mkdir(exist_ok=True)
 
     # ✅ Save datasets
-    train_data = pd.concat([X_train, y_train.reset_index(drop=True)], axis=1)
-    test_data = pd.concat([X_test, y_test.reset_index(drop=True)], axis=1)
+    X_train = X_train.reset_index(drop=True)
+    X_test = X_test.reset_index(drop=True)
+    y_train = y_train.reset_index(drop=True)
+    y_test = y_test.reset_index(drop=True)
+
+    train_data = pd.concat([X_train, y_train], axis=1)
+    test_data = pd.concat([X_test, y_test], axis=1)
+
     train_data.to_csv(data_dir / "train_data.csv", index=False)
     test_data.to_csv(data_dir / "test_data.csv", index=False)
     print("✅ Datasets saved successfully.")
