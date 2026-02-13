@@ -36,7 +36,6 @@ wheels/
 Thumbs.db
 
 # ML/Data
-*.pkl
 *.pickle
 *.joblib
 *.h5
